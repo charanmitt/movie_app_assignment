@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'movie_card.dart';
+import 'package:movie_app_assignment/models/movie.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   
+late Future<List<Movie>> trenndingMovies;
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class HomePage extends StatelessWidget {
               ),
               ],
               ),
-        backgroundColor: const Color.fromARGB(255, 255, 0, 0), // colour of top app bar
+        backgroundColor: const Color.fromARGB(255, 94, 94, 94), // colour of top app bar
       ),
 
       backgroundColor: Color.fromARGB(255, 94, 94, 94),//represents home page background colour
@@ -30,23 +34,28 @@ class HomePage extends StatelessWidget {
             Text(
               'Popular Movies',
               style: GoogleFonts.aBeeZee(fontSize:25),
-              ),          
+              ),
+              SizedBox(height: 20,),  
             SizedBox(
             width:double.infinity,
             child: CarouselSlider.builder(
               itemCount: 10, 
               options: CarouselOptions(
-                height: 300, 
+                height: 500, 
                 autoPlay: true,
-                autoPlayCurve: Curves.fastOutSlowIn,
                 viewportFraction: 0.55,
+                enlargeCenterPage: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 1),
               ),
               itemBuilder:(context,itemIndex,pageViewIndex){
-                return Container(
-                  height: 700,
-                  width: 300,
-                  color: Colors.white,);
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(12), // value changes the shape of the widget
+                  child: Container(
+                    height: 300,
+                    width: 400,
+                    color: Colors.white,),
+                );
 
               } , 
               )

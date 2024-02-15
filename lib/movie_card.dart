@@ -6,9 +6,13 @@ class MovieCard extends StatelessWidget {
   final String duration;
   final String MovieUrl;
   MovieCard({
+    // ignore: invalid_required_named_param
     @required this.title = '',
+    // ignore: invalid_required_named_param
     @required this.duration='',
+    // ignore: invalid_required_named_param
     @required this.rating='',
+    // ignore: invalid_required_named_param
     @required this.MovieUrl='',
   });
   @override
