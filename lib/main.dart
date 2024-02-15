@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home : HomePage(),
+      home : HomePage(), // home page elemnets will be displayed here
+      debugShowCheckedModeBanner: false, // top right debug banner will be gone
     );
   }
 }
