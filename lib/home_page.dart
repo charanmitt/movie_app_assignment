@@ -12,29 +12,44 @@ class HomePage extends StatelessWidget {
       appBar:AppBar(
         title:Row(
           mainAxisAlignment: MainAxisAlignment.center, // makes app bar title to be in center
-          children: [Text('MOVIEFLIX'),],),
+          children: [
+            Text(
+              'MITT TECHNOLOGIES'
+              ),
+              ],
+              ),
         backgroundColor: const Color.fromARGB(255, 255, 0, 0), // colour of top app bar
       ),
 
-      backgroundColor: Color.fromARGB(255, 255, 250, 250),//represents home page background colour
+      backgroundColor: Color.fromARGB(255, 94, 94, 94),//represents home page background colour
       body : SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start, //Text doesnt moves to center
           children: [
             Text(
-              'Popular Movies',style: GoogleFonts.aBeeZee(fontSize:25),
+              'Popular Movies',
+              style: GoogleFonts.aBeeZee(fontSize:25),
               ),          
             SizedBox(
             width:double.infinity,
             child: CarouselSlider.builder(
               itemCount: 10, 
+              options: CarouselOptions(
+                height: 300, 
+                autoPlay: true,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                viewportFraction: 0.55,
+                autoPlayAnimationDuration: const Duration(seconds: 1),
+              ),
               itemBuilder:(context,itemIndex,pageViewIndex){
                 return Container(
-                  height: 300,
+                  height: 700,
                   width: 300,
-                  color: Colors.amber,);
+                  color: Colors.white,);
 
               } , 
-              options: CarouselOptions())
+              )
             )
           ],
         )
