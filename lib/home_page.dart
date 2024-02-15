@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_assignment/api/api.dart';
+import 'package:movie_app_assignment/favourites.dart';
 import 'package:movie_app_assignment/models/movie.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app_assignment/search_page.dart';
 import 'package:movie_app_assignment/trending_slider.dart';
 
-String i_path ='https://image.tmdb.org/t/p/w500';
-// ignore: must_be_immutable
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -78,42 +79,30 @@ late Future<List<Movie>> popularMovies;
         )
       ),
       drawer: Drawer(
+        
         child: ListView(
           children: [
             ListTile(
               leading: const Icon(Icons.home_filled),
               title: const Text('Home'),
               onTap: () {
-                const snackBar = SnackBar(content: Text('App is under devolopment'));
+                const snackBar = SnackBar(content: Text('You are in Home Page'));
 
                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
             ),
             ListTile(
-              leading: const Icon(Icons.app_registration_rounded),
-              title: const Text('Signup'),
+              leading: const Icon(Icons.search),
+              title: const Text('Search'),
               onTap: () {
-                const snackBar = SnackBar(content: Text('Signup Page'));
-
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchPage()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.login),
-              title: const Text('Login'),
+              leading: const Icon(Icons.favorite_outline),
+              title: const Text('Favourite'),
               onTap: () {
-                const snackBar = SnackBar(content: Text('Login Page'));
-
-                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
-              onTap: () {
-                const snackBar = SnackBar(content: Text('Logout Page'));
-
-                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Favorites()));
               },
             ),
           ],

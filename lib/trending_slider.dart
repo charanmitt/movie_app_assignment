@@ -22,8 +22,11 @@ class TrendingSlider extends StatelessWidget
                 autoPlayCurve: Curves.fastOutSlowIn,
                 autoPlayAnimationDuration: const Duration(seconds: 1),
               ),
+       
               itemBuilder:(context,itemIndex,pageViewIndex){
+        
                 return ClipRRect(
+                  
                   borderRadius: BorderRadius.circular(12), // value changes the shape of the widget
                   child: SizedBox(
                     height: 300,
@@ -33,10 +36,12 @@ class TrendingSlider extends StatelessWidget
                       fit: BoxFit.cover,
                       '${Fixed.imagePath}${snapshot.data[itemIndex].posterPath}',
                     ),
-                ));
+                ),
+                  );
 
               } , 
-              )
+              ),
             );
+            
   }
 }
