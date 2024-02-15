@@ -30,15 +30,15 @@ late Future<List<Movie>> popularMovies;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title:Row(
+        title:const Row(
           mainAxisAlignment: MainAxisAlignment.center, // makes app bar title to be in center
           children: [
             Text(
-              'MITT TECHNOLOGIES'
+              'MOVIES APP'
               ),
               ],
               ),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255), // colour of top app bar
+        backgroundColor: Color.fromARGB(255, 21, 119, 135), // colour of top app bar
       ),
 
       backgroundColor: Color.fromARGB(255, 255, 255, 255),//represents home page background colour
@@ -49,7 +49,7 @@ late Future<List<Movie>> popularMovies;
           children: [
             Text(
               'Popular Movies',
-              style: GoogleFonts.aBeeZee(fontSize:25),
+              style: GoogleFonts.aBeeZee(fontSize:18),
               ),
               SizedBox(height: 20,), 
               SizedBox(
