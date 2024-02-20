@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_assignment/api/api.dart';
 import 'package:movie_app_assignment/favourites.dart';
+import 'package:movie_app_assignment/home1.dart';
 import 'package:movie_app_assignment/models/movie.dart';
 // ignore: depend_on_referenced_packages
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app_assignment/search_page.dart';
 import 'package:movie_app_assignment/trending_slider.dart';
-import 'package:movie_app_assignment/login_page.dart';
-import 'package:movie_app_assignment/signup_page.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -125,29 +125,21 @@ late Future<List<Movie>> popularMovies;
             ),
             ListTile(
               leading: const Icon(Icons.favorite_outline),
-              title: const Text('Favourite'),
+              title: const Text('Favourites'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const Favorites()));
               },
             ),
             ListTile(
-              leading: const Icon(Icons.login),
-              title: const Text('Login'),
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
-              },
-            ),
-             ListTile(
-              leading: const Icon(Icons.create),
-              title: const Text('SignUp'),
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignupPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainHome()));
               },
             ),
           ],
         )
       ),
-      
-            );
+    );
   }
 }

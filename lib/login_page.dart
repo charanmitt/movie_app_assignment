@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_assignment/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -9,6 +11,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  //initializing firebase
+  Future<FirebaseApp> _initializeFirebase() async 
+  {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -70,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                 },
                 child: const Text(
                   'Login',

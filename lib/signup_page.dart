@@ -2,13 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:movie_app_assignment/home_page.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+  final VoidCallback showLoginPage;
+  const SignupPage(
+    {Key? key,
+    required this.showLoginPage,
+    }) : super(key: key);
 
   @override
   State<SignupPage> createState() => _SignupPageState();
-}
+} 
 
 class _SignupPageState extends State<SignupPage> {
+
+  //text controllers
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose()
+  {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

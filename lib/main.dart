@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart'; //material package
-import 'home_page.dart';
+//import 'home_page.dart';
+import 'package:movie_app_assignment/home1.dart';
 void main()
 {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home : HomePage(), // home page elemnets will be displayed here
+      home : MainHome(), // home page elemnets will be displayed here
       debugShowCheckedModeBanner: false, // top right debug banner will be gone
     );
   }
